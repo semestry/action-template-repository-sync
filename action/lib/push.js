@@ -54,7 +54,7 @@ export default async function (octokit, { changedRepositories, localFiles, input
     const { data: newCommit } = await octokit.request('POST /repos/{owner}/{repo}/git/commits', {
       owner: github.context.repo.owner,
       repo,
-      message: `chore(template): sync with ${github.context.repo.owner}/${github.context.repo.repo}`,
+      message: `Sync with ${github.context.repo.owner}/${github.context.repo.repo}`,
       tree: newTree.sha,
       parents: [sha]
     })
